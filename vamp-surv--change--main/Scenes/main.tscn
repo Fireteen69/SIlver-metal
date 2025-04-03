@@ -1241,6 +1241,7 @@ sources/0 = SubResource("TileSetAtlasSource_yfqjv")
 [node name="Player" parent="." instance=ExtResource("2_08tp7")]
 
 [node name="Spawner" parent="." instance=ExtResource("3_wl6pk")]
+spawn_amount = 5.0
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jbqkv")

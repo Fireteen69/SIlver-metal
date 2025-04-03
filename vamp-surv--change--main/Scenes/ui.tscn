@@ -1,19 +1,19 @@
 [gd_scene load_steps=5 format=3 uid="uid://c41fmmloc0iji"]
 
-[ext_resource type="Script" path="res://node_3d.gd" id="1_xwi7k"]
-[ext_resource type="FontFile" uid="uid://d3n5sd8aawen4" path="res://Font/LaTequila.ttf" id="2_akccj"]
-[ext_resource type="FontFile" uid="uid://8vitech8gnur" path="res://Player/LaTequila.ttf" id="3_spdm1"]
-[ext_resource type="Texture2D" uid="uid://qe5jsh14xhc5" path="res://FX/Music/Wild West Music - Harvey Carman/Wild West Music - Harvey Carman/WildWest_1950x1300.png" id="4_f7814"]
+[ext_resource type="Script" path="res://Scripts/node_3d.gd" id="1_d2f46"]
+[ext_resource type="FontFile" uid="uid://d3n5sd8aawen4" path="res://Font/LaTequila.ttf" id="2_1276e"]
+[ext_resource type="FontFile" uid="uid://8vitech8gnur" path="res://Player/LaTequila.ttf" id="3_isdq7"]
+[ext_resource type="Texture2D" uid="uid://qe5jsh14xhc5" path="res://FX/Music/Wild West Music - Harvey Carman/Wild West Music - Harvey Carman/WildWest_1950x1300.png" id="4_auipw"]
 
 [node name="Ui" type="CanvasLayer"]
-script = ExtResource("1_xwi7k")
+script = ExtResource("1_d2f46")
 
 [node name="Label" type="Label" parent="."]
 offset_left = 87.0
 offset_top = 80.0
 offset_right = 1050.0
 offset_bottom = 219.0
-theme_override_fonts/font = ExtResource("2_akccj")
+theme_override_fonts/font = ExtResource("2_1276e")
 theme_override_font_sizes/font_size = 67
 text = "Silver Bullet"
 
@@ -35,7 +35,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_spdm1")
+theme_override_fonts/font = ExtResource("3_isdq7")
 theme_override_font_sizes/font_size = 30
 text = "Start"
 
@@ -53,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("3_spdm1")
+theme_override_fonts/font = ExtResource("3_isdq7")
 theme_override_font_sizes/font_size = 15
 disabled = true
 text = "Settings"
@@ -63,4 +63,4 @@ modulate = Color(0.713292, 0.664766, 0.584112, 1)
 z_index = -5
 position = Vector2(3254, 515)
 scale = Vector2(3.33548, 1.22615)
-texture = ExtResource("4_f7814")
+texture = ExtResource("4_auipw")

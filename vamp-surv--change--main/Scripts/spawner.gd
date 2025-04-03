@@ -23,7 +23,7 @@ func spawn_enemy(mob,spawn_amount):
 		var p = await validate_position(spawn_position_candidate)
 		if p:
 			mob_spawn.position = spawn_position_candidate
-		mob_spawn 212
+		mob_spawn 
 # Spawn the mob by adding it to the Main scene.
 		get_tree().root.add_child(mob_spawn)
 		enemy_count+=1
