@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca6avkflyas7g"]
+
+[ext_resource type="Shader" uid="uid://0h014oweu65j" path="res://uno dos.tres" id="1_ckd2o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4wncn"]
+render_priority = 0
+shader = ExtResource("1_ckd2o")
+shader_parameter/FloatParameter = 0.05
+shader_parameter/Alpine = null
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_todlq"]
+next_pass = SubResource("ShaderMaterial_4wncn")
+albedo_color = Color(0.201564, 0.756345, 0.658346, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_xkmms"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_todlq")
+mesh = SubResource("SphereMesh_xkmms")

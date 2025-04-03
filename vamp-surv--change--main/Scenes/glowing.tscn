@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cyh6ulh7r7yf3"]
+
+[ext_resource type="Texture2D" uid="uid://dq2lrd23b1wyl" path="res://Icons/icon.svg" id="1_qw6gn"]
+
+[sub_resource type="Environment" id="Environment_ixfim"]
+background_mode = 3
+background_energy_multiplier = 16.0
+glow_enabled = true
+glow_intensity = 8.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_ixfim")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(100, 8.108, 0, 1)
+position = Vector2(471, 265)
+texture = ExtResource("1_qw6gn")

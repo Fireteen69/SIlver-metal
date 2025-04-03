@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://eavuri7gdfsq"]
+
+[ext_resource type="Script" path="res://Scripts/spawner.gd" id="1_wcdrg"]
+
+[node name="Spawner" type="Node2D"]
+z_index = 1
+script = ExtResource("1_wcdrg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
