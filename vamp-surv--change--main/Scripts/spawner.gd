@@ -33,3 +33,8 @@ func validate_position(p_pos: Vector2) -> bool:
 func _on_timer_timeout() -> void:
 	if enemy_count<max_enemies:
 		spawn_enemy(skeleton,spawn_amount)
+		
+
+
+func _on_hud_start_game() -> void:
+	$Timer.start()
