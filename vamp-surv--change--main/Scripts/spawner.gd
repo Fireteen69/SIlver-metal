@@ -38,3 +38,4 @@ func _on_timer_timeout() -> void:
 
 func _on_hud_start_game() -> void:
 	$Timer.start()
+	

@@ -54,4 +54,26 @@ theme_override_font_sizes/font_size = 27
 action_mode = 0
 text = "Start"
 
+[node name="SettingsButton" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.429
+anchor_top = 0.739
+anchor_right = 0.575
+anchor_bottom = 0.838
+offset_left = 26.792
+offset_top = 68.128
+offset_right = -24.4
+offset_bottom = 37.976
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("3_sbpax")
+theme_override_font_sizes/font_size = 12
+disabled = true
+action_mode = 0
+text = "Settings"
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_start_button_pressed"]

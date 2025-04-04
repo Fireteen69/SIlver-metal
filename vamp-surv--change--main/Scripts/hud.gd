@@ -7,6 +7,7 @@ func _ready() -> void:
 	$StartButton.show()
 	$SilverBullet.show()
 	$Sprite2D.show()
+	$SettingsButton.show()
 
 
 
@@ -20,3 +21,4 @@ func _on_start_button_pressed() -> void:
 	$StartButton.hide()
 	$SilverBullet.hide()
 	$Sprite2D.hide()
+	$SettingsButton.hide()
