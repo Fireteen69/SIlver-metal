@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwgj6lkcjp6tj"]
+[gd_scene load_steps=7 format=3 uid="uid://dwgj6lkcjp6tj"]
 
 [ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_ayhj5"]
-[ext_resource type="PackedScene" uid="uid://r7q7rtqkxjpj" path="res://Scenes/enemy.tscn" id="2_5sk4k"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
@@ -1245,8 +1244,6 @@ sources/0 = SubResource("TileSetAtlasSource_yfqjv")
 [node name="Player" parent="." instance=ExtResource("2_08tp7")]
 
 [node name="Spawner" parent="." instance=ExtResource("3_wl6pk")]
-
-[node name="skeleton" parent="." instance=ExtResource("2_5sk4k")]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_jbqkv")
