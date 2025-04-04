@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://dwgj6lkcjp6tj"]
 
-[ext_resource type="PackedScene" path="res://Scenes/hud.tscn" id="1_obv2b"]
+[ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_obv2b"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]

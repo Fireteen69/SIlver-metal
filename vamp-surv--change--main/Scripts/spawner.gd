@@ -4,7 +4,7 @@ var skeleton = preload("res://Scenes/enemy.tscn")
 @export var spawn_amount: int=5
 @onready var tilemap = "../TileMap"
 @onready var max_enemies = 250
-@export var enemy_distance: float=200#randf_range(-200,200)
+@export var enemy_distance: float=randf_range(500,650)
 var enemy_count = 0
 var mob_types:Array[PackedScene] = [skeleton]
 func spawn_enemy(mob,spawnAmount:int):

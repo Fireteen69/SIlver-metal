@@ -4,7 +4,7 @@ extends CharacterBody2D
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
 var timer = 0
-var speed = 201
+@export var speed = 65
 
 var rng = RandomNumberGenerator.new()
 func _ready() -> void:
@@ -17,7 +17,7 @@ func _physics_process(delta):
 		timer = rng.randf_range(2, 5)
 	else:
 		timer = 0
-#jfopaibnfd
+
 
 func _on_timer_timeout():
 	if player != null:
@@ -33,3 +33,10 @@ func _on_timer_timeout():
 			elif random_direction < 0.1:
 				direction = Vector2.DOWN.rotated(rng.randf() * 2 * PI)
 	
+func _on_hud_start_game() -> void:
+	$Speed.start()
+	
+
+func _on_speed_timeout() -> void:
+	if speed <=300:
+		speed +=5

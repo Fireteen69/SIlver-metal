@@ -1,7 +1,7 @@
 extends CharacterBody2D
 signal death
 signal hit
-@export var speed = 200
+@export var speed = 270
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("walk_right"):
