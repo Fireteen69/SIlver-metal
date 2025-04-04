@@ -6,3 +6,5 @@
 [node name="Main" instance=ExtResource("1_aap1a")]
 
 [node name="Hud" parent="." index="2" instance=ExtResource("2_fx3n0")]
+
+[connection signal="start_game" from="Hud" to="Spawner" method="_on_hud_start_game"]

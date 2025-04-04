@@ -8,7 +8,6 @@ script = ExtResource("1_wcdrg")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
 
 [node name="Timer2" type="Timer" parent="."]
 autostart = true
