@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
-@onready var player = $"../Player"
+@onready var player = get_tree().current_scene.get_node("Player")
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
 var timer = 0
-var speed = 210
+var speed = 201
 
 var rng = RandomNumberGenerator.new()
 func _ready() -> void:

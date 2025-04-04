@@ -5,10 +5,9 @@
 [node name="Spawner" type="Node2D"]
 z_index = 1
 script = ExtResource("1_wcdrg")
-spawn_amount = null
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 5.0
 autostart = true
 
 [node name="Timer2" type="Timer" parent="."]

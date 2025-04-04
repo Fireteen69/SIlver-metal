@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://8x4t3awbnmn6"]
+
+[ext_resource type="Texture2D" uid="uid://c7e2vhsf21khj" path="res://Mobs/New Piskel.png" id="1_v7v2v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4737f"]
+
+[node name="TestEnemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_v7v2v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4737f")
