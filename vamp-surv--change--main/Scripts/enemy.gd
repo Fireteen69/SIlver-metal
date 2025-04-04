@@ -24,7 +24,7 @@ func _on_timer_timeout():
 		var player_distance = player.position - position
 		if player_distance.length() <= 50:
 			new_direction = player_distance.normalized()
-		elif player_distance.length() <= 700 and timer <= 0:
+		elif player_distance.length() <= 111700 and timer <= 0:
 			direction = player_distance.normalized()
 		elif timer <= 0:
 			var random_direction = rng.randf()
