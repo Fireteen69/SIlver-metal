@@ -1,6 +1,5 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwgj6lkcjp6tj"]
+[gd_scene load_steps=6 format=3 uid="uid://dwgj6lkcjp6tj"]
 
-[ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_ayhj5"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
@@ -1239,7 +1238,17 @@ sources/0 = SubResource("TileSetAtlasSource_yfqjv")
 
 [node name="Main" type="Node2D"]
 
-[node name="Hud" parent="." instance=ExtResource("1_ayhj5")]
+[node name="Hud" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
 
 [node name="Player" parent="." instance=ExtResource("2_08tp7")]
 
