@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dplip8mghs7m0" path="res://Icons/New Piskel.png" id="2_tq5wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4d6o"]
-size = Vector2(65, 68)
+size = Vector2(33, 52)
 
 [node name="skeleton" type="CharacterBody2D" groups=["Enemies"]]
 position = Vector2(-7, 3)
@@ -19,7 +19,7 @@ wait_time = 0.005
 autostart = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, -2)
+position = Vector2(8.5, -2)
 shape = SubResource("RectangleShape2D_k4d6o")
 
 [node name="NewPiskel" type="Sprite2D" parent="."]

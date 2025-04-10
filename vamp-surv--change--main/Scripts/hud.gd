@@ -1,7 +1,3 @@
-
-
-
-
 extends CanvasLayer
 
 signal start_game
@@ -26,3 +22,9 @@ func _on_start_button_pressed() -> void:
 	$SilverBullet.hide()
 	$Sprite2D.hide()
 	$SettingsButton.hide()
+
+
+
+
+func _on_player_death() -> void:
+	pass
