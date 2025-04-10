@@ -1,6 +1,9 @@
 extends CharacterBody2D
 signal death
 signal hit
+var health=105
+var max_health=10
+#@onready var health=$%health
 @export var speed = 270
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
@@ -16,22 +19,11 @@ func _process(delta: float) -> void:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
 
-signal damaged(by)
-signal killed()
 
-const HP_MAX = 100.0
-var hp = HP_MAX
-
-func take_damage(impact):
-	impact = clamp(impact, 0.0, 1.0)
-	var damage = HP_MAX * impact
-	var prev_hp = hp
-	hp -= damage
-	hp = clamp(hp, 0, HP_MAX)
-
-	if prev_hp != hp:
-		emit_signal("damaged", damage)
-
-
-	if hp <= 0.0:
-		emit_signal("killed")
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	health-=5
+	hit.emit(health,max_health)
+	if health < 1:
+		death.emit()
+		queue_free()
+		
