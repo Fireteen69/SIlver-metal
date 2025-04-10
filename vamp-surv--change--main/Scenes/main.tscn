@@ -1285,4 +1285,5 @@ tile_set = SubResource("TileSet_jbqkv")
 tile_set = SubResource("TileSet_jbqkv")
 
 [connection signal="death" from="Player" to="Hud" method="_on_player_death"]
+[connection signal="death" from="Player" to="Spawner" method="_on_player_death"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

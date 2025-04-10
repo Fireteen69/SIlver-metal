@@ -2,7 +2,7 @@ extends CharacterBody2D
 signal death
 signal hit
 var health=105
-var max_health=100
+var max_health=10
 #@onready var health=$%health
 @export var speed = 270
 func _process(delta: float) -> void:

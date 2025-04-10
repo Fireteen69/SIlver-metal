@@ -6,8 +6,10 @@ signal start_game
 func _ready() -> void:
 	$StartButton.show()
 	$SilverBullet.show()
-	$Sprite2D.show()
+	$Title.show()
 	$SettingsButton.show()
+	$DeathScene.hide()
+	$RetryButton.hide()
 
 
 
@@ -20,11 +22,22 @@ func _on_start_button_pressed() -> void:
 	start_game.emit()
 	$StartButton.hide()
 	$SilverBullet.hide()
-	$Sprite2D.hide()
+	$Title.hide()
 	$SettingsButton.hide()
 
 
 
 
 func _on_player_death() -> void:
-	pass
+	$DeathScene.show()
+	$RetryButton.show()
+	
+
+#FIX THIS!!!!!!
+func _on_retry_button_pressed() -> void:
+	start_game.emit()
+	$StartButton.hide()
+	$SilverBullet.hide()
+	$Title.hide()
+	$SettingsButton.hide()
+	$DeathScene.hide()

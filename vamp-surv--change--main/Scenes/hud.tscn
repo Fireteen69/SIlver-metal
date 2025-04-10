@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://deig76f0wa5is"]
+[gd_scene load_steps=6 format=3 uid="uid://deig76f0wa5is"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_uhfc1"]
 [ext_resource type="FontFile" uid="uid://d3n5sd8aawen4" path="res://Font/LaTequila.ttf" id="2_ccnc6"]
 [ext_resource type="FontFile" uid="uid://8vitech8gnur" path="res://Player/LaTequila.ttf" id="3_sbpax"]
 [ext_resource type="Texture2D" uid="uid://c806cq4m12y1" path="res://New Piskel (10).png" id="4_h5v1l"]
+[ext_resource type="Texture2D" uid="uid://fc17r0po3ixm" path="res://death screen.png" id="5_2cdsf"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_uhfc1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Title" type="Sprite2D" parent="."]
 position = Vector2(574.625, 286)
 scale = Vector2(1.57637, 1.325)
 texture = ExtResource("4_h5v1l")
@@ -54,6 +55,27 @@ theme_override_font_sizes/font_size = 27
 action_mode = 0
 text = "Start"
 
+[node name="RetryButton" type="Button" parent="."]
+z_index = 2
+anchors_preset = -1
+anchor_left = 0.429
+anchor_top = 0.739
+anchor_right = 0.575
+anchor_bottom = 0.838
+offset_left = 8.79199
+offset_top = -12.872
+offset_right = -19.4
+offset_bottom = -25.024
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.0523599
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("3_sbpax")
+theme_override_font_sizes/font_size = 21
+action_mode = 0
+text = "Retry"
+
 [node name="SettingsButton" type="Button" parent="."]
 anchors_preset = -1
 anchor_left = 0.429
@@ -75,5 +97,11 @@ disabled = true
 action_mode = 0
 text = "Settings"
 
+[node name="DeathScene" type="Sprite2D" parent="."]
+position = Vector2(580, 313)
+scale = Vector2(1.59247, 1.22589)
+texture = ExtResource("5_2cdsf")
+
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="SettingsButton" to="." method="_on_start_button_pressed"]
