@@ -25,5 +25,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	hit.emit(health,max_health)
 	if health < 1:
 		death.emit()
-		queue_free()
+		$".".hide()
 		
+
+
+func _on_hud_retry_game() -> void:
+	health = 100

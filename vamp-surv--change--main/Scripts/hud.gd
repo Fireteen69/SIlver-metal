@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 signal start_game
+signal retry_game
 
 
 func _ready() -> void:
@@ -35,9 +36,11 @@ func _on_player_death() -> void:
 
 #FIX THIS!!!!!!
 func _on_retry_button_pressed() -> void:
-	start_game.emit()
+	retry_game.emit()
 	$StartButton.hide()
 	$SilverBullet.hide()
 	$Title.hide()
 	$SettingsButton.hide()
 	$DeathScene.hide()
+	$RetryButton.hide()
+	

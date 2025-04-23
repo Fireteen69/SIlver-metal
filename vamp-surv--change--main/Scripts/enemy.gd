@@ -40,3 +40,7 @@ func _on_hud_start_game() -> void:
 func _on_speed_timeout() -> void:
 	if speed <=300:
 		speed +=5
+
+
+func _on_player_death() -> void:
+	queue_free()

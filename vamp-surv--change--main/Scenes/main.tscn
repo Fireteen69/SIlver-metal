@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwgj6lkcjp6tj"]
+[gd_scene load_steps=11 format=3 uid="uid://dwgj6lkcjp6tj"]
 
 [ext_resource type="Script" path="res://Scenes/main.gd" id="1_nwqtk"]
 [ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_obv2b"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
+[ext_resource type="PackedScene" uid="uid://r7q7rtqkxjpj" path="res://Scenes/enemy.tscn" id="2_cftim"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
 [ext_resource type="Script" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
@@ -1244,6 +1245,9 @@ sources/0 = SubResource("TileSetAtlasSource_yfqjv")
 [node name="Main" type="Node2D"]
 script = ExtResource("1_nwqtk")
 
+[node name="skeleton" parent="." instance=ExtResource("2_cftim")]
+position = Vector2(-1010, 299)
+
 [node name="Hud" parent="." instance=ExtResource("1_obv2b")]
 
 [node name="PlayerUI" type="CanvasLayer" parent="Hud"]
@@ -1284,6 +1288,9 @@ tile_set = SubResource("TileSet_jbqkv")
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
 tile_set = SubResource("TileSet_jbqkv")
 
+[connection signal="retry_game" from="Hud" to="Player" method="_on_hud_retry_game"]
+[connection signal="retry_game" from="Hud" to="Spawner" method="_on_hud_retry_game"]
+[connection signal="death" from="Player" to="skeleton" method="_on_player_death"]
 [connection signal="death" from="Player" to="Hud" method="_on_player_death"]
 [connection signal="death" from="Player" to="Spawner" method="_on_player_death"]
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

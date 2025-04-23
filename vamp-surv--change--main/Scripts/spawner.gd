@@ -41,5 +41,13 @@ func _on_hud_start_game() -> void:
 	
 
 
+
+
 func _on_player_death() -> void:
-	queue_free()
+	pass
+
+
+func _on_hud_retry_game() -> void:
+	$Timer.start()
+	
+	
