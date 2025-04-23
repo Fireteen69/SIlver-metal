@@ -1,4 +1,6 @@
 extends Node2D
+var enemy_health = 100
+var max_enemy_health = 100
 var skeleton = preload("res://Scenes/enemy.tscn")
 @onready var player= $"../Player"
 @export var spawn_amount: int=5

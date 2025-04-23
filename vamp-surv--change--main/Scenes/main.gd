@@ -18,3 +18,9 @@ func _process(delta: float) -> void:
 func _on_player_hit(health_value,max_health):
 	bar_value=health_value
 	print(bar_value)
+
+
+func _on_player_death() -> void:
+	pass
+	#get_tree().call_group(Enemies, queue_free)
+	

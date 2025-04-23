@@ -43,4 +43,3 @@ func _on_retry_button_pressed() -> void:
 	$SettingsButton.hide()
 	$DeathScene.hide()
 	$RetryButton.hide()
-	
