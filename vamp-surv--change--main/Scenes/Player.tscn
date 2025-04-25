@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_alyrr"]
 [ext_resource type="Texture2D" uid="uid://chipsx0q4l3x5" path="res://Icons/cowboy (no bebop).png" id="2_w1fy2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oio20"]
-size = Vector2(53, 68.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22s0n"]
+size = Vector2(53, 75)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6txwf"]
-size = Vector2(45, 68)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igwvf"]
+size = Vector2(41, 70)
 
 [node name="Node2D" type="CharacterBody2D"]
 z_index = 1
@@ -24,12 +24,12 @@ texture = ExtResource("2_w1fy2")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, -1.75)
-shape = SubResource("RectangleShape2D_oio20")
+position = Vector2(0.5, -3.5)
+shape = SubResource("RectangleShape2D_22s0n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -2)
-shape = SubResource("RectangleShape2D_6txwf")
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_igwvf")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

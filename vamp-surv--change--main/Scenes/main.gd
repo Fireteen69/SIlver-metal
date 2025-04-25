@@ -22,5 +22,4 @@ func _on_player_hit(health_value,max_health):
 
 func _on_player_death() -> void:
 	pass
-	#get_tree().call_group(Enemies, queue_free)
-	
+	get_tree().call_group("Enemies", "queue_free")

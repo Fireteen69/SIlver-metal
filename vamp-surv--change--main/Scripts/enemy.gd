@@ -2,6 +2,8 @@ extends CharacterBody2D
 var enemy_health = 100
 var max_enemy_health = 100
 @onready var player = get_tree().current_scene.get_node("Player")
+@onready var exp_scene=preload("res://Scenes/star.tscn")
+
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
 var timer = 0
@@ -9,11 +11,14 @@ var timer = 0
 
 var rng = RandomNumberGenerator.new()
 func _ready() -> void:
-	pass
+	if enemy_health <= 0:
+		var exp= exp_scene.instantiate()
+		get_tree().root.get_node("Main").add_child(exp)
+		queue_free()
+
 func _physics_process(delta):
 	if enemy_health <= 0:
 		queue_free()
-	print(enemy_health)
 	var movement = speed * direction * delta
 	var collision = move_and_collide(movement)
 	if collision != null and collision.get_collider().name != "player":
@@ -52,5 +57,8 @@ func _on_player_death() -> void:
 
 func _on_hud_retry_game() -> void:
 	enemy_health = 0
-	if enemy_health <= 0:
-		queue_free()
+
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
