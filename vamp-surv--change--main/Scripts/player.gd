@@ -33,6 +33,24 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 			$".".hide()
 		
 
+func _ready():
+	var enemies = get_tree().get_nodes_in_group("enemies")
+	if enemies.size() == 0:
+		return
+
+# Pick random enemy
+		var target = enemies[randi() % enemies.size()]
+
+	# Rotate to face the target
+		look_at(target.global_position)
+
+	# Fi-re bullet
+		var bullet = bullet_scene.instantiate()
+		bullet.position = global_position
+		bullet.look_at(target.global_position)
+		bullet.direction = (target.global_position - global_position).normalized()
+		get_parent().add_child(bullet)
+	pass
 
 func _on_hud_retry_game() -> void:
 	health = 100

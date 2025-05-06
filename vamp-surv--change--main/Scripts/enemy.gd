@@ -61,4 +61,7 @@ func _on_hud_retry_game() -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
+	if body.is_in_group("Bullet"):
+		enemy_health-=20
+		if enemy_health <=0:
+			queue_free()
