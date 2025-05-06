@@ -31,7 +31,7 @@ wait_time = 60.0
 position = Vector2(6.5, 3)
 shape = SubResource("RectangleShape2D_k4d6o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Enemies"]]
 position = Vector2(6.5, 4)
 shape = SubResource("RectangleShape2D_lnr2s")
 

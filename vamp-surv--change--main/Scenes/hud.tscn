@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://deig76f0wa5is"]
+[gd_scene load_steps=7 format=3 uid="uid://deig76f0wa5is"]
 
 [ext_resource type="Script" path="res://Scripts/hud.gd" id="1_uhfc1"]
 [ext_resource type="FontFile" uid="uid://d3n5sd8aawen4" path="res://Font/LaTequila.ttf" id="2_ccnc6"]
 [ext_resource type="FontFile" uid="uid://8vitech8gnur" path="res://Player/LaTequila.ttf" id="3_sbpax"]
 [ext_resource type="Texture2D" uid="uid://c806cq4m12y1" path="res://New Piskel (10).png" id="4_h5v1l"]
 [ext_resource type="Texture2D" uid="uid://fc17r0po3ixm" path="res://death screen.png" id="5_2cdsf"]
+[ext_resource type="AudioStream" uid="uid://c28sibcvk2xrp" path="res://🎶 Sneak Town (Gun).mp3" id="6_d86wx"]
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_uhfc1")
@@ -101,6 +102,10 @@ text = "Settings"
 position = Vector2(580, 313)
 scale = Vector2(1.59247, 1.22589)
 texture = ExtResource("5_2cdsf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_d86wx")
+autoplay = true
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]

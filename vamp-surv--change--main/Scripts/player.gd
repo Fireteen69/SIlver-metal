@@ -7,7 +7,7 @@ var exp=0
 var max_exp=100
 
 #@onready var health=$%health
-@onready var enemy = get_tree().current_scene.get_node("skeleton")
+#@onready var enemy = get_tree().current_scene.get_node("skeleton")
 @export var speed = 270
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	print(health)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name.contains("skeleton"):
+	if body.is_in_group("Enemies"):
 		health-=5
 		hit.emit(health,max_health)
 		if health < 1:

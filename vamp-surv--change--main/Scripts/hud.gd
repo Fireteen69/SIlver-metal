@@ -11,7 +11,7 @@ func _ready() -> void:
 	$SettingsButton.show()
 	$DeathScene.hide()
 	$RetryButton.hide()
-
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
