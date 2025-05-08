@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sxgh2"]
 size = Vector2(8.2115, 3.52466)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
 scale = Vector2(0.568309, 0.56743)
 script = ExtResource("1_bn7fi")
 
@@ -20,6 +20,6 @@ position = Vector2(8.39046e-07, 1.05043e-07)
 scale = Vector2(3, 3)
 shape = SubResource("RectangleShape2D_sxgh2")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." groups=["Bullet"]]
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

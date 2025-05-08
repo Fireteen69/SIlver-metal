@@ -1294,6 +1294,7 @@ tile_set = SubResource("TileSet_jbqkv")
 [connection signal="retry_game" from="Hud" to="skeleton" method="_on_hud_retry_game"]
 [connection signal="retry_game" from="Hud" to="Player" method="_on_hud_retry_game"]
 [connection signal="retry_game" from="Hud" to="Spawner" method="_on_hud_retry_game"]
+[connection signal="start_game" from="Hud" to="Player" method="_on_hud_start_game"]
 [connection signal="death" from="Player" to="." method="_on_player_death"]
 [connection signal="death" from="Player" to="skeleton" method="_on_player_death"]
 [connection signal="death" from="Player" to="Hud" method="_on_player_death"]

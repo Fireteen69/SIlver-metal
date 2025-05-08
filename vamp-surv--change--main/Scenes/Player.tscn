@@ -10,11 +10,10 @@ size = Vector2(53, 75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_igwvf"]
 size = Vector2(41, 70)
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_alyrr")
-speed = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -36,5 +35,9 @@ shape = SubResource("RectangleShape2D_igwvf")
 [node name="Bullet" parent="." instance=ExtResource("3_rqb57")]
 position = Vector2(1, 0)
 
+[node name="bullet_timer" type="Timer" parent="."]
+wait_time = 0.75
+
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="bullet_timer" to="." method="_on_timer_timeout"]

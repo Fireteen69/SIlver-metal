@@ -5,9 +5,9 @@ var health=100
 var max_health=10
 var exp=0
 var max_exp=100
-
+@onready var bullet_timer =$bullet_timer
 #@onready var health=$%health
-#@onready var enemy = get_tree().current_scene.get_node("skeleton")
+@onready var bullet_scene =preload("res://bullet.tscn")
 @export var speed = 270
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
-	print(health)
+
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
@@ -34,22 +34,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		
 
 func _ready():
-	var enemies = get_tree().get_nodes_in_group("enemies")
-	if enemies.size() == 0:
-		return
-
-# Pick random enemy
-		var target = enemies[randi() % enemies.size()]
-
-	# Rotate to face the target
-		look_at(target.global_position)
-
-	# Fi-re bullet
-		var bullet = bullet_scene.instantiate()
-		bullet.position = global_position
-		bullet.look_at(target.global_position)
-		bullet.direction = (target.global_position - global_position).normalized()
-		get_parent().add_child(bullet)
 	pass
 
 func _on_hud_retry_game() -> void:
@@ -62,3 +46,26 @@ func _on_star_exp() -> void:
 	if exp>=max_exp:
 		exp-=max_exp
 		max_exp*1.05
+
+
+func _on_timer_timeout() -> void:
+	var enemies = get_tree().get_nodes_in_group("Enemies")
+	if enemies.size() == 0:
+		return
+
+# Pick random enemy
+	var target = enemies[randi() % enemies.size()]
+
+	# Rotate to face the target
+	
+
+	# Fi-re bullet
+	var bullet = bullet_scene.instantiate()
+	bullet.position = global_position
+	bullet.look_at(target.global_position)
+	bullet.direction = (target.global_position - global_position).normalized()
+	get_parent().add_child(bullet)
+
+
+func _on_hud_start_game() -> void:
+	bullet_timer.start()

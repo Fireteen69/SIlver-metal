@@ -8,11 +8,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	position += direction *speed*delta
-	pass
+	position += direction*delta*speed
+	
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
-		get_tree().create_timer(.5).timeout
+		get_tree().create_timer(.89).timeout
 		queue_free()

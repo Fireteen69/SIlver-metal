@@ -11,10 +11,8 @@ var timer = 0
 
 var rng = RandomNumberGenerator.new()
 func _ready() -> void:
-	if enemy_health <= 0:
-		var exp= exp_scene.instantiate()
-		get_tree().root.get_node("Main").add_child(exp)
-		queue_free()
+	pass
+
 
 func _physics_process(delta):
 	if enemy_health <= 0:
@@ -33,7 +31,7 @@ func _on_timer_timeout():
 		var player_distance = player.position - position
 		if player_distance.length() <= 50:
 			new_direction = player_distance.normalized()
-		elif player_distance.length() <= 111700 and timer <= 0:
+		elif player_distance.length() <= 99999999900 and timer <= 0:
 			direction = player_distance.normalized()
 		elif timer <= 0:
 			var random_direction = rng.randf()
@@ -60,8 +58,16 @@ func _on_hud_retry_game() -> void:
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Bullet"):
+
+func _process(delta: float) -> void:
+	if enemy_health <= 0:
+		var exp= exp_scene.instantiate()
+		get_parent().root.get_node("Main").add_child(exp)
+		queue_free()
+
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Bullet"):
 		enemy_health-=20
-		if enemy_health <=0:
-			queue_free()
+		print(enemy_health)
