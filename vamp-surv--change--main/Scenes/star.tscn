@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://db38glfvyf4hj"]
 
-[ext_resource type="Script" path="res://Scenes/star.gd" id="1_fwqfm"]
+[ext_resource type="Script" uid="uid://7anivjbchki1" path="res://Scenes/star.gd" id="1_fwqfm"]
 [ext_resource type="Texture2D" uid="uid://c8aeswbd57ex" path="res://Star.png" id="1_ix87u"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ky1xi"]

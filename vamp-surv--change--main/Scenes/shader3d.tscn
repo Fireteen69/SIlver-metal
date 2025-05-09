@@ -6,7 +6,7 @@
 render_priority = 0
 shader = ExtResource("1_ckd2o")
 shader_parameter/FloatParameter = 0.05
-shader_parameter/Alpine = null
+shader_parameter/Alpine = Color(0, 0, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_todlq"]
 next_pass = SubResource("ShaderMaterial_4wncn")

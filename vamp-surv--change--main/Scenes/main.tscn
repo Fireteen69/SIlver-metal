@@ -1,12 +1,12 @@
 [gd_scene load_steps=12 format=3 uid="uid://dwgj6lkcjp6tj"]
 
-[ext_resource type="Script" path="res://Scenes/main.gd" id="1_nwqtk"]
+[ext_resource type="Script" uid="uid://4gxw7uvow8gh" path="res://Scenes/main.gd" id="1_nwqtk"]
 [ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_obv2b"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
 [ext_resource type="PackedScene" uid="uid://r7q7rtqkxjpj" path="res://Scenes/enemy.tscn" id="2_cftim"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
-[ext_resource type="Script" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
+[ext_resource type="Script" uid="uid://b4y08fojd484q" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
 [ext_resource type="PackedScene" uid="uid://db38glfvyf4hj" path="res://Scenes/star.tscn" id="8_1mopt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kqil0"]

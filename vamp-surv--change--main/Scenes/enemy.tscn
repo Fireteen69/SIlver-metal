@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://r7q7rtqkxjpj"]
 
-[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_k2qxe"]
+[ext_resource type="Script" uid="uid://cvnx2usqqfdk6" path="res://Scripts/enemy.gd" id="1_k2qxe"]
 [ext_resource type="Texture2D" uid="uid://dplip8mghs7m0" path="res://Icons/New Piskel.png" id="2_tq5wy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4d6o"]

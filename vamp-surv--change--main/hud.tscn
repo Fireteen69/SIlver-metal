@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cjv3vg3ggb0a8"]
 
-[ext_resource type="Script" path="res://Scripts/hud.gd" id="1_uhfc1"]
+[ext_resource type="Script" uid="uid://cknaswgxocvdi" path="res://Scripts/hud.gd" id="1_uhfc1"]
 [ext_resource type="FontFile" uid="uid://d3n5sd8aawen4" path="res://Font/LaTequila.ttf" id="2_ccnc6"]
 [ext_resource type="FontFile" uid="uid://8vitech8gnur" path="res://Player/LaTequila.ttf" id="3_sbpax"]
 [ext_resource type="Texture2D" uid="uid://c806cq4m12y1" path="res://New Piskel (10).png" id="4_h5v1l"]

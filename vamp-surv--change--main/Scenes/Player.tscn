@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7qqjpnkdbk6o"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_alyrr"]
+[ext_resource type="Script" uid="uid://m06hv4bckya8" path="res://Scripts/player.gd" id="1_alyrr"]
 [ext_resource type="Texture2D" uid="uid://chipsx0q4l3x5" path="res://Icons/cowboy (no bebop).png" id="2_w1fy2"]
-[ext_resource type="PackedScene" uid="uid://d3caog6p3mabx" path="res://bullet.tscn" id="3_rqb57"]
+[ext_resource type="PackedScene" uid="uid://d3caog6p3mabx" path="res://Scenes/bullet.tscn" id="3_rqb57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22s0n"]
 size = Vector2(53, 75)
