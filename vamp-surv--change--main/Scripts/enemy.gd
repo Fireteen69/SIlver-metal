@@ -4,6 +4,8 @@ var max_enemy_health = 100
 @onready var player = get_tree().current_scene.get_node("Player")
 @onready var exp_scene=preload("res://Scenes/star.tscn")
 
+
+
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
 var timer = 0
@@ -16,7 +18,11 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if enemy_health <= 0:
+		var exp= exp_scene.instantiate()
+		exp.position= self.position
+		get_tree().current_scene.add_child(exp)
 		queue_free()
+
 	var movement = speed * direction * delta
 	var collision = move_and_collide(movement)
 	if collision != null and collision.get_collider().name != "player":
@@ -60,14 +66,9 @@ func _on_hud_retry_game() -> void:
 
 
 func _process(delta: float) -> void:
-	if enemy_health <= 0:
-		var exp= exp_scene.instantiate()
-		get_parent().root.get_node("Main").add_child(exp)
-		queue_free()
-
+	pass
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
 		enemy_health-=20
-		print(enemy_health)

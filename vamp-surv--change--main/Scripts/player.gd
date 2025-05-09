@@ -7,7 +7,7 @@ var exp=0
 var max_exp=100
 @onready var bullet_timer =$bullet_timer
 #@onready var health=$%health
-@onready var bullet_scene =preload("res://bullet.tscn")
+@onready var bullet_scene =preload("res://Scenes/bullet.tscn")
 @export var speed = 270
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO

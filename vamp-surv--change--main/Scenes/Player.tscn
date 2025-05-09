@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7qqjpnkdbk6o"]
+[gd_scene load_steps=5 format=3 uid="uid://b7qqjpnkdbk6o"]
 
 [ext_resource type="Script" uid="uid://m06hv4bckya8" path="res://Scripts/player.gd" id="1_alyrr"]
 [ext_resource type="Texture2D" uid="uid://chipsx0q4l3x5" path="res://Icons/cowboy (no bebop).png" id="2_w1fy2"]
-[ext_resource type="PackedScene" uid="uid://d3caog6p3mabx" path="res://Scenes/bullet.tscn" id="3_rqb57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22s0n"]
 size = Vector2(53, 75)
@@ -32,11 +31,8 @@ shape = SubResource("RectangleShape2D_22s0n")
 position = Vector2(0.5, -3)
 shape = SubResource("RectangleShape2D_igwvf")
 
-[node name="Bullet" parent="." instance=ExtResource("3_rqb57")]
-position = Vector2(1, 0)
-
-[node name="bullet_timer" type="Timer" parent="."]
-wait_time = 0.75
+[node name="bullet_timer" type="Timer" parent="." groups=["player"]]
+wait_time = 0.05
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
