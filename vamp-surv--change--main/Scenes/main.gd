@@ -1,9 +1,6 @@
 extends Node2D
 @onready var player=$Player
 @onready var health=$Player/Health/health
-@onready var health_value=player.health
-@onready var max_health=player.max_health
-@onready var bar_value=health.value
 
 
 
@@ -16,9 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func _on_player_hit(health_value,max_health):
-	bar_value=health_value
-	print(bar_value)
+
 
 
 func _on_player_death() -> void:

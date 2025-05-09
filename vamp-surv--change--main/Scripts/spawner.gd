@@ -10,7 +10,7 @@ var skeleton = preload("res://Scenes/enemy.tscn")
 var enemy_count = 0
 var mob_types:Array[PackedScene] = [skeleton]
 func spawn_enemy(mob,spawnAmount:int):
-	print(mob_types[0])
+
 	if spawn_amount >= max_enemies:
 		return
 	var player_position = player.global_position
