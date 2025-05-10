@@ -2,11 +2,10 @@ extends CharacterBody2D
 signal death
 signal hit
 var health=100
-var max_health=10
+var max_health=100
 var exp=0
 var max_exp=100
 @onready var bullet_timer =$bullet_timer
-#@onready var health=$%health
 @onready var bullet_scene =preload("res://Scenes/bullet.tscn")
 @export var speed = 270
 func _process(delta: float) -> void:
@@ -27,7 +26,7 @@ func _process(delta: float) -> void:
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
 		health-=5
-		hit.emit(health,max_health)
+		hit.emit()
 		if health < 1:
 			death.emit()
 			$".".hide()
