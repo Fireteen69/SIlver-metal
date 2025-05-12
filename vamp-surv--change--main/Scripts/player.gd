@@ -1,10 +1,12 @@
 extends CharacterBody2D
 signal death
 signal hit
+signal levelup
 var health=100
 var max_health=100
 var exp=0
 var max_exp=100
+var level=1
 @onready var bullet_timer =$bullet_timer
 @onready var bullet_scene =preload("res://Scenes/bullet.tscn")
 @export var speed = 270
@@ -21,6 +23,14 @@ func _process(delta: float) -> void:
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
+	if exp>=max_exp:
+		exp=0
+		level+=1
+		max_exp=round(max_exp*1.50)
+		max_health+=10
+		health=max_health
+		bullet_timer.wait_time*=.95
+		levelup.emit()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -30,21 +40,22 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		if health < 1:
 			death.emit()
 			$".".hide()
-		
+
+
+
 
 func _ready():
 	pass
 
 func _on_hud_retry_game() -> void:
 	health = 100
+	exp=0
+	max_exp=50
+	max_health=100
+	hit.emit()
 	$".".show()
 
 
-func _on_star_exp() -> void:
-	exp+=5
-	if exp>=max_exp:
-		exp-=max_exp
-		max_exp*1.05
 
 
 func _on_timer_timeout() -> void:
@@ -55,10 +66,6 @@ func _on_timer_timeout() -> void:
 # Pick random enemy
 	var target = enemies[randi() % enemies.size()]
 
-	# Rotate to face the target
-	
-
-	# Fi-re bullet
 	var bullet = bullet_scene.instantiate()
 	bullet.position = global_position
 	bullet.look_at(target.global_position)

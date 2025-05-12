@@ -1,5 +1,4 @@
-extends StaticBody2D
-signal exp
+extends Area2D
 @onready var player = get_tree().current_scene.get_node("Player")
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
@@ -18,6 +17,11 @@ func _process(delta: float) -> void:
 		position+=moving
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+
+
+func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
-		exp.emit
+		body.exp+=50
+		print(body.exp)
 		queue_free()
