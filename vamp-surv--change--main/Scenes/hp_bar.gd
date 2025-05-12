@@ -4,7 +4,7 @@ extends ProgressBar
 func _ready() -> void:
 	min_value=0
 	max_value= player.max_health
-	value=player.max_healthwwww
+	value=player.max_health
 
 
 func _on_player_hit() -> void:
