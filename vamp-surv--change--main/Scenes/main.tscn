@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dwgj6lkcjp6tj"]
+[gd_scene load_steps=9 format=3 uid="uid://dwgj6lkcjp6tj"]
 
 [ext_resource type="Script" uid="uid://4gxw7uvow8gh" path="res://Scenes/main.gd" id="1_nwqtk"]
 [ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_obv2b"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
 [ext_resource type="Script" uid="uid://b4y08fojd484q" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
-[ext_resource type="PackedScene" uid="uid://db38glfvyf4hj" path="res://Scenes/star.tscn" id="7_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfqjv"]
 texture = ExtResource("3_ye0bs")
@@ -1259,7 +1258,7 @@ anchor_top = -0.039
 anchor_bottom = -0.039
 offset_left = -33.0
 offset_top = -68.0
-offset_right = 29.0
+offset_right = 34.0
 offset_bottom = -41.0
 value = 100.0
 script = ExtResource("6_prlvr")
@@ -1280,8 +1279,6 @@ tile_set = SubResource("TileSet_jbqkv")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="TileMap"]
 tile_set = SubResource("TileSet_jbqkv")
-
-[node name="Star" parent="." instance=ExtResource("7_6bp64")]
 
 [connection signal="retry_game" from="Hud" to="Player" method="_on_hud_retry_game"]
 [connection signal="retry_game" from="Hud" to="Spawner" method="_on_hud_retry_game"]

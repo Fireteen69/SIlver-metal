@@ -53,6 +53,7 @@ func _on_hud_start_game() -> void:
 func _on_speed_timeout() -> void:
 	if speed <=300:
 		speed +=5
+		
 
 
 func _on_player_death() -> void:
@@ -71,4 +72,4 @@ func _process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
-		enemy_health-=20
+		enemy_health-=(20+ player.bullet_atk)

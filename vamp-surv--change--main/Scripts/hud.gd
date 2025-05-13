@@ -34,7 +34,6 @@ func _on_player_death() -> void:
 	$RetryButton.show()
 	
 
-#FIX THIS!!!!!!
 func _on_retry_button_pressed() -> void:
 	retry_game.emit()
 	$StartButton.hide()

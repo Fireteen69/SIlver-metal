@@ -5,8 +5,12 @@ signal levelup
 var health=100
 var max_health=100
 var exp=0
-var max_exp=100
+var max_exp=150
 var level=1
+var bullet_atk=0
+var roll_speed
+@onready var hurtnoise=$HitHurt
+@onready var pewpew=$Pewpew
 @onready var bullet_timer =$bullet_timer
 @onready var bullet_scene =preload("res://Scenes/bullet.tscn")
 @export var speed = 270
@@ -30,6 +34,7 @@ func _process(delta: float) -> void:
 		max_health+=10
 		health=max_health
 		bullet_timer.wait_time*=.95
+		bullet_atk+=5
 		levelup.emit()
 
 
@@ -37,6 +42,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Enemies"):
 		health-=5
 		hit.emit()
+		hurtnoise.play()
 		if health < 1:
 			death.emit()
 			$".".hide()
@@ -67,6 +73,7 @@ func _on_timer_timeout() -> void:
 	var target = enemies[randi() % enemies.size()]
 
 	var bullet = bullet_scene.instantiate()
+	pewpew.play()
 	bullet.position = global_position
 	bullet.look_at(target.global_position)
 	bullet.direction = (target.global_position - global_position).normalized()
