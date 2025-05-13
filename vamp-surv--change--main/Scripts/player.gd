@@ -33,7 +33,7 @@ func _process(delta: float) -> void:
 		max_exp=round(max_exp*1.50)
 		max_health+=10
 		health=max_health
-		bullet_timer.wait_time*=.95
+		bullet_timer.wait_time*=.85
 		bullet_atk+=5
 		levelup.emit()
 

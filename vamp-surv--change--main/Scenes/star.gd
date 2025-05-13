@@ -1,4 +1,5 @@
 extends Area2D
+signal exp_change
 @onready var player = get_tree().current_scene.get_node("Player")
 var direction: Vector2 = Vector2.ZERO
 var new_direction = Vector2(0, 1)
@@ -22,6 +23,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
+		exp_change.emit()
 		body.exp+=50
-		print(body.exp)
+	
 		queue_free()
+
+
+func _on_hud_retry_game() -> void:
+	queue_free()
