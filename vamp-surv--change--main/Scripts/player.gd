@@ -8,7 +8,7 @@ var exp=0
 var max_exp=150
 var level=1
 var bullet_atk=0
-var roll_speed
+var roll_speed=100
 @onready var hurtnoise=$HitHurt
 @onready var pewpew=$Pewpew
 @onready var bullet_timer =$bullet_timer
