@@ -1,8 +1,10 @@
 extends CharacterBody2D
+signal death
 var enemy_health = 100
 var max_enemy_health = 100
 @onready var player = get_tree().current_scene.get_node("Player")
 @onready var exp_scene=preload("res://Scenes/star.tscn")
+
 
 
 
@@ -21,7 +23,9 @@ func _physics_process(delta):
 		var exp= exp_scene.instantiate()
 		exp.position= self.position
 		get_tree().current_scene.add_child(exp)
+		death.emit()
 		queue_free()
+		
 
 	var movement = speed * direction * delta
 	var collision = move_and_collide(movement)

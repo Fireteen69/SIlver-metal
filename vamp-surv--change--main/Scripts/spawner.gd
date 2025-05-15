@@ -51,5 +51,9 @@ func _on_player_death() -> void:
 
 func _on_hud_retry_game() -> void:
 	$Timer.start()
+	enemy_count=0
 	
-	
+
+
+func _on_skeleton_death() -> void:
+	enemy_count-=1

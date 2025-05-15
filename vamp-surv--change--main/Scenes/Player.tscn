@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b7qqjpnkdbk6o"]
 
-[ext_resource type="Script" uid="uid://m06hv4bckya8" path="res://Scripts/player.gd" id="1_alyrr"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_alyrr"]
 [ext_resource type="Texture2D" uid="uid://chipsx0q4l3x5" path="res://Icons/cowboy (no bebop).png" id="2_w1fy2"]
 [ext_resource type="AudioStream" uid="uid://c26v0kvy2uwci" path="res://hitHurt.wav" id="3_gntrk"]
 [ext_resource type="AudioStream" uid="uid://dbd0mdxpl6jpd" path="res://9mm-pistol-shoot-short-reverb-7152.mp3" id="4_dewec"]
@@ -15,6 +15,7 @@ size = Vector2(41, 70)
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_alyrr")
+speed = null
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -41,7 +42,7 @@ stream = ExtResource("3_gntrk")
 
 [node name="Pewpew" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dewec")
-volume_db = -9.057
+volume_db = -18.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

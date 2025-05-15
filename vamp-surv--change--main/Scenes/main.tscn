@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://dwgj6lkcjp6tj"]
 
-[ext_resource type="Script" uid="uid://4gxw7uvow8gh" path="res://Scenes/main.gd" id="1_nwqtk"]
+[ext_resource type="Script" path="res://Scenes/main.gd" id="1_nwqtk"]
 [ext_resource type="PackedScene" uid="uid://deig76f0wa5is" path="res://Scenes/hud.tscn" id="1_obv2b"]
 [ext_resource type="PackedScene" uid="uid://b7qqjpnkdbk6o" path="res://Scenes/Player.tscn" id="2_08tp7"]
 [ext_resource type="PackedScene" uid="uid://eavuri7gdfsq" path="res://Scenes/Spawner.tscn" id="3_wl6pk"]
 [ext_resource type="Texture2D" uid="uid://bsuj8c5yaqfgi" path="res://Buildings/Atlas.png" id="3_ye0bs"]
-[ext_resource type="Script" uid="uid://bru4hlfri347v" path="res://Scenes/progress_bar_2.gd" id="5_6bp64"]
-[ext_resource type="Script" uid="uid://b4y08fojd484q" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
+[ext_resource type="Script" path="res://Scenes/progress_bar_2.gd" id="5_6bp64"]
+[ext_resource type="Script" path="res://Scenes/hp_bar.gd" id="6_prlvr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yfqjv"]
 texture = ExtResource("3_ye0bs")
@@ -1250,6 +1250,7 @@ layer = 2
 
 [node name="Player" parent="." instance=ExtResource("2_08tp7")]
 position = Vector2(-41, 58)
+speed = null
 
 [node name="ProgressBar" type="ProgressBar" parent="Player"]
 modulate = Color(0.202374, 0.747993, 7.70092e-07, 1)

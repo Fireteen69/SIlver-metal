@@ -24,16 +24,20 @@ func _process(delta: float) -> void:
 		velocity.y += 1
 	if Input.is_action_pressed("walk_up"):
 		velocity.y -= 1
+	if Input.is_action_pressed("kys"):
+		health=0
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
+	if Input.is_action_pressed("roll"):
+		
 	if exp>=max_exp:
 		exp=0
 		level+=1
 		max_exp=round(max_exp*1.50)
-		max_health+=10
+		max_health+=20
 		health=max_health
-		bullet_timer.wait_time*=.85
+		bullet_timer.wait_time*=.09
 		bullet_atk+=5
 		levelup.emit()
 
@@ -58,6 +62,8 @@ func _on_hud_retry_game() -> void:
 	exp=0
 	max_exp=50
 	max_health=100
+	bullet_timer.wait_time=.5
+	level==1
 	hit.emit()
 	$".".show()
 
