@@ -1250,6 +1250,7 @@ layer = 2
 
 [node name="Player" parent="." instance=ExtResource("2_08tp7")]
 position = Vector2(-41, 58)
+speed = 270
 
 [node name="ProgressBar" type="ProgressBar" parent="Player"]
 modulate = Color(0.202374, 0.747993, 7.70092e-07, 1)

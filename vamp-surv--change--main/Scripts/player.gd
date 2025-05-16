@@ -2,18 +2,23 @@ extends CharacterBody2D
 signal death
 signal hit
 signal levelup
+
 var health=100
 var max_health=100
 var exp=0
 var max_exp=150
 var level=1
 var bullet_atk=0
-var roll_speed=100
+var rolls=1
+var max_rolls=1
 @onready var hurtnoise=$HitHurt
 @onready var pewpew=$Pewpew
 @onready var bullet_timer =$bullet_timer
+@onready var Roll_timer =$Roll_timer
+@onready var Roll_amount_timer =$Roll_amount_timer
 @onready var bullet_scene =preload("res://Scenes/bullet.tscn")
 @export var speed = 270
+
 func _process(delta: float) -> void:
 	var velocity = Vector2.ZERO
 	if Input.is_action_pressed("walk_right"):
@@ -26,10 +31,16 @@ func _process(delta: float) -> void:
 		velocity.y -= 1
 	if Input.is_action_pressed("kys"):
 		health=0
+		hit.emit()
+		death.emit()
+	if Input.is_action_just_pressed("roll") and rolls>0:
+			speed=810
+			rolls-=1
+
+			Roll_timer.start()
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
-	if Input.is_action_pressed("roll"):
 		
 	if exp>=max_exp:
 		exp=0
@@ -37,8 +48,10 @@ func _process(delta: float) -> void:
 		max_exp=round(max_exp*1.50)
 		max_health+=20
 		health=max_health
-		bullet_timer.wait_time*=.09
+		bullet_timer.wait_time*=.9
 		bullet_atk+=5
+		rolls=1
+		max_rolls=1
 		levelup.emit()
 
 
@@ -62,6 +75,8 @@ func _on_hud_retry_game() -> void:
 	exp=0
 	max_exp=50
 	max_health=100
+	rolls=1
+	max_rolls=1
 	bullet_timer.wait_time=.5
 	level==1
 	hit.emit()
@@ -88,3 +103,13 @@ func _on_timer_timeout() -> void:
 
 func _on_hud_start_game() -> void:
 	bullet_timer.start()
+	Roll_amount_timer.start()
+
+func _on_roll_timer_timeout() -> void:
+	speed=270
+
+
+func _on_roll_amount_timer_timeout() -> void:
+	if rolls<max_rolls:
+		rolls+=1
+		print(rolls)

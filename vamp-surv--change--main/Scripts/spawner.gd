@@ -45,8 +45,7 @@ func _on_hud_start_game() -> void:
 
 
 
-func _on_player_death() -> void:
-	pass
+
 
 
 func _on_hud_retry_game() -> void:
@@ -55,5 +54,7 @@ func _on_hud_retry_game() -> void:
 	
 
 
-func _on_skeleton_death() -> void:
-	enemy_count-=1
+
+
+func _on_timer_2_timeout() -> void:
+	enemy_count-=5

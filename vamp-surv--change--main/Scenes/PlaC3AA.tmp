@@ -43,15 +43,6 @@ stream = ExtResource("3_gntrk")
 stream = ExtResource("4_dewec")
 volume_db = -18.0
 
-[node name="Roll_timer" type="Timer" parent="."]
-wait_time = 0.5
-one_shot = true
-
-[node name="Roll_amount_timer" type="Timer" parent="."]
-wait_time = 3.0
-
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="bullet_timer" to="." method="_on_timer_timeout"]
-[connection signal="timeout" from="Roll_timer" to="." method="_on_roll_timer_timeout"]
-[connection signal="timeout" from="Roll_amount_timer" to="." method="_on_roll_amount_timer_timeout"]
