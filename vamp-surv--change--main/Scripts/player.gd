@@ -11,6 +11,9 @@ var level=1
 var bullet_atk=0
 var rolls=1
 var max_rolls=1
+var rolling = false
+
+
 @onready var hurtnoise=$HitHurt
 @onready var pewpew=$Pewpew
 @onready var bullet_timer =$bullet_timer
@@ -36,8 +39,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("roll") and rolls>0:
 			speed=810
 			rolls-=1
-
 			Roll_timer.start()
+			rolling = true
 	if velocity.length() > 0:
 		velocity = velocity.normalized() * speed
 	position += velocity * delta
@@ -56,13 +59,16 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Enemies"):
-		health-=5
-		hit.emit()
-		hurtnoise.play()
-		if health < 1:
-			death.emit()
-			$".".hide()
+	if rolling == false:
+		if body.is_in_group("Enemies"):
+			health-=5
+			hit.emit()
+			hurtnoise.play()
+			if health < 1:
+				death.emit()
+				$".".hide()
+	else:
+		pass
 
 
 
@@ -107,6 +113,7 @@ func _on_hud_start_game() -> void:
 
 func _on_roll_timer_timeout() -> void:
 	speed=270
+	rolling = false
 
 
 func _on_roll_amount_timer_timeout() -> void:
